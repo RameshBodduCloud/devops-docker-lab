@@ -1,15 +1,13 @@
 #!/bin/sh
 
-echo "================================="
-echo "Docker Entrypoint Script Started"
-echo "================================="
+echo "Docker Entrypoint Started!"
 
-echo "Running initialization tasks..."
+echo "Environment: ${APP_ENV:-development}"
 
-mkdir -p /app/logs
-
-echo "Initialization completed!"
-
-echo "Received arguments: $@"
+if [ "$APP_ENV" = "production" ]; then
+    echo "Running production initialization..."
+else
+    echo "Running development initialization..."
+fi
 
 exec "$@"
