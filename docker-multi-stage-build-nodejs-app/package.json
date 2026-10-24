@@ -1,0 +1,16 @@
+{
+  "name": "docker-multistage-demo",
+  "version": "1.0.0",
+  "description": "Docker Multi Stage Build Practice",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "mkdir -p dist && cp server.js dist/server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0"
+  }
+}
